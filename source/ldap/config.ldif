@@ -16,7 +16,7 @@ objectClass: inetOrgPerson
 cn: John
 sn: Doe
 uid: john.doe
-mail: john@example.com
+mail: john.doe@example.com
 userPassword: password
 
 dn: uid=jane.smith,ou=People,dc=example,dc=com

@@ -1,0 +1,27 @@
+server:
+  port: 8000
+
+keycloak:
+  auth-url: http://localhost:8080/realms/reports-realm/protocol/openid-connect/auth
+  token-url: http://keycloak:8080/realms/reports-realm/protocol/openid-connect/token
+  client-id: reports-frontend
+  redirect-uri: http://localhost:8000/auth/callback
+
+app:
+  encryption:
+    key: fernetgeneratedkey
+  session-ttl-seconds: 2592000
+  access-token-ttl-seconds: 120
+
+api:
+  service-url: http://localhost:8001
+
+redis:
+  host: localhost
+  port: 6379
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    com.bionicpro.auth: DEBUG
