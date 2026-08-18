@@ -1,0 +1,14 @@
+server:
+  port: 8001
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/reports-realm
+  datasource:
+    url: jdbc:clickhouse://localhost:8123/reports
+    username: user
+    password: pass
+    driver-class-name: com.clickhouse.jdbc.ClickHouseDriver

@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/reports-realm/protocol/openid-connect/certs
+
+  datasource:
+    url: jdbc:clickhouse://clickhouse:8123/reports?compress=0
+    username: default
+    password: ""
+    driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
+
+minio:
+  endpoint: http://minio:9000
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket: reports
+  cdn-base-url: http://localhost:8081
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    com.bionicpro.auth: DEBUG
